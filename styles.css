@@ -1,0 +1,20 @@
+/* Customize inline code */
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  padding: 2px 4px;
+  font-size: 90%;
+  border-radius: 4px;
+}
+
+/* Customize code blocks */
+pre code {
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+}

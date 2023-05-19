@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>data.knit</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="data-panel" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Data Panel</h1>
+<p>After the user imports data, they will be directed to the
+<code>Data</code> panel. In the <code>Data</code> panel, users are able
+to make modifications to their dataset before generating models.</p>
+<div class="figure">
+<img src="images/data/data1.png" alt="" />
+<p class="caption">Picture of data frame</p>
+</div>
+<div id="versions" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Versions</h2>
+<p>Every time a modification is made to a dataset, a new version of that
+dataset is created. Users can traverse versions by clicking on versions
+under the <code>Versions</code> header.</p>
+</div>
+<div id="data-page" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Data Page</h2>
+<p>The currently selected version`s dataset is shown in the top frame.
+In the bottom frame, users can navigate across and perform various
+dataset modification operations.</p>
+</div>
+<div id="exploration" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Exploration</h2>
+<p>Exploration contains the <code>History Log</code> for the current
+version, which can also be viewed in the <code>Log</code> panel. The
+user can also view summary statistics under the <code>Summary</code>
+tab.</p>
+<div id="history-log" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> History Log</h3>
+<p>The History Log is a log of all the modifications made to the current
+version`s dataframe. It provides information like time modified and a
+description of the operation.</p>
+</div>
+<div id="summary" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Summary</h3>
+<p>The summary tab current uses the <code>psych</code> R package to
+display summary statistics.</p>
+</div>
+</div>
+<div id="attributes" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Attributes</h2>
+<p>The Attributes section contains the <code>Remove</code> and
+<code>Convert Units</code> operations.</p>
+<div id="remove" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Remove</h3>
+<p>Remove is used to remove any attributes from the dataset. This
+operation will be recorded in the History Log and will create a new
+version of the data.</p>
+<div class="figure">
+<img src="images/data/data_remove.png" alt="" />
+<p class="caption">Picture of remove attributes functionality</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>Use <code>Choose Attributes</code> to select attributes for
+removal.</p></li>
+<li><p>Provide a reason for removal.</p></li>
+<li><p>Stage attributes for removal using the <code>Stage</code>
+button.</p></li>
+<li><p>When done staging, use the <code>Run</code> button to carry out
+the operation. This will create a new version of the data with selected
+attributes removed.</p></li>
+</ol>
+</div>
+<div id="convert-units" class="section level3" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Convert Units</h3>
+<p>Convert Units can be used to change the units of attributes in the
+dataset. This operation will be recorded in the History Log and will
+create a new version of the data. Unit conversions take place in two
+steps, specification and conversion.</p>
+<div class="figure">
+<img src="images/data/data_units.png" alt="" />
+<p class="caption">Picture of units functionality</p>
+</div>
+<div id="specifying-units" class="section level4" number="1.4.2.1">
+<h4><span class="header-section-number">1.4.2.1</span> Specifying
+Units</h4>
+<ul>
+<li>Units must be specified before the app can perform unit
+conversions.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Under <code>Choose attributes</code>, select an attribute you
+wish to specify a unit for.</p></li>
+<li><p>Under <code>Operation</code>, select the attribute using the
+<code>Column</code> dropdown.</p></li>
+<li><p>Select a unit from the units builder. Hit the <code>Add</code>
+button to preview that unit. You may also use the <code>Operator</code>
+buttons to further configure your unit.</p></li>
+<li><p>Once the unit is completed, stage the operation using the
+<code>Stage</code> button.</p></li>
+<li><p>Run the operation with the <code>Run</code> button. This will
+create a new column of data specified to your unit.</p></li>
+</ol>
+</div>
+<div id="converting-units" class="section level4" number="1.4.2.2">
+<h4><span class="header-section-number">1.4.2.2</span> Converting
+Units</h4>
+<ul>
+<li><p>Unit conversions are performed similarly to unit
+specifications.</p></li>
+<li><p>To perform a conversion, follow the same steps as specification,
+except now selecting the newly created column with specified
+units.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="records" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Records</h2>
+<p>The Records section contains the “Remove” and “Filter”
+operations.</p>
+<div id="remove-1" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Remove</h3>
+<p>Remove is used to remove any records from the dataset. This operation
+will be recorded in the History Log and will create a new version of the
+data.</p>
+<div class="figure">
+<img src="images/data/data_remove2.png" alt="" />
+<p class="caption">Picture of remove records functionality</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>Use <code>Select Row(s)</code> to select records for removal.
+Acceptable formats are shown in the example, and may be comma seperated
+to remove multiple ranges of records.</p></li>
+<li><p>Provide a reason for removal.</p></li>
+<li><p>Stage records for removal using the <code>Stage</code>
+button.</p></li>
+<li><p>When done staging, use the <code>Run</code> button to carry out
+the operation. This will create a new version of the data with selected
+records removed.</p></li>
+</ol>
+</div>
+<div id="filter" class="section level3" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Filter</h3>
+<p>Filter is used to filter the data based on user-set parameters.</p>
+<div class="figure">
+<img src="images/data/data_filter.png" alt="" />
+<p class="caption">Picture of filter functionality</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>Use <code>Choose Attributes</code> to select columns you wish to
+filter by.</p></li>
+<li><p>Select a column using the <code>Column</code> dropdown</p></li>
+<li><p>Select a filter using the <code>Filter</code> dropdown.</p></li>
+<li><p>Input a value to filter by.</p></li>
+</ol>
+<ul>
+<li>Ex. A filter operation of Column X &gt;= 2 will remove all records
+with Column X value less than 2.</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Enter a reason for this operation.</p></li>
+<li><p>Hit run to carry out the operation. This will create a new
+version with the filter applied.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
