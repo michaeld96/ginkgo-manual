@@ -22,7 +22,7 @@ This Docker Image holds all the dependencies for the Ginkgo app. This resolves t
 2) Once Docker is installed on your system you now have access to Docker's command line interface (CLI). We first need to sign into Docker through Docker Desktop.
  
 <img src = "images/readme/docker-desktop.
-png" style = "display: block; width: 50%;">
+png" style = "display: block; width: 50%; margin: 0 auto;">
 
 3) Now we will sign into Docker. This will launch in your web browser, and after you sign in it will sign you in your Docker Desktop. *Note:* If you do not have a Docker account you must create an account to be able to `pull` the Docker Image. 
 
@@ -47,6 +47,7 @@ localhost:3838
 8) If you see this page when you type in `localhost:3838` then the app is working correctly!
 
 <img src = "images/readme/home.png" style = "display: block; margin: 0 auto; width: 100%;"> 
+
 #### Trouble Shooting with Docker Image
 
 Let's say your on the Ginkgo app and it crashes! It is a simple fix. Go to Docker Desktop and simply click `Restart` button. This will rerun the code to relaunch the Ginkgo app. The screenshot below shows where the `Restart` button is. Once the application is reset, feel free to type in `localhost:3838` back into your browser.
@@ -60,3 +61,5 @@ With this application, we have made a website for the Ginkgo app, but there is o
 Please, feel free to use this option and send an email to <a href = "michael.dick@amador.com">Michael</a> if the application does crash.
 
 To visit the application visit this [link](http://ec2-18-118-18-33.us-east-2.compute.amazonaws.com:3838/).
+
+<bold style = "color: red; font-weight: bold;"> WARNING: Only one user should be using the app as this is only one port, meaning this is only one session. If there is another individual on then both of those users will be using the app at once.</bold>
