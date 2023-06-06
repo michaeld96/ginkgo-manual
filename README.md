@@ -20,25 +20,35 @@ This Docker Image holds all the dependencies for the Ginkgo app. This resolves t
 
 
 2) Once Docker is installed on your system you now have access to Docker's command line interface (CLI). We first need to sign into Docker through Docker Desktop.
- 
+3) 
+ <p align = "center">
 <img src = "images/readme/docker-desktop.
-png" style = "display: block; width: 50%; margin: 0 auto;">
+png" style = " width: 50%;" >
+</p>
 
-3) Now we will sign into Docker. This will launch in your web browser, and after you sign in it will sign you in your Docker Desktop. *Note:* If you do not have a Docker account you must create an account to be able to `pull` the Docker Image. 
+1) Now we will sign into Docker. This will launch in your web browser, and after you sign in it will sign you in your Docker Desktop. *Note:* If you do not have a Docker account you must create an account to be able to `pull` the Docker Image. 
 
-<img src = "images/readme/docker-sign-in.png" style = "display: block; margin: 0 auto; width: 80%;">
+<p align = "center">
+<img src = "images/readme/docker-sign-in.png" style = "margin: 0 auto; width: 80%;" >
+</p>
 
-4) Next, we will go to the search bar at the top of Docker Desktop and search `michaelatamador`. Click on the Image `michaelatamador/nca-app`, and then click `Run`. 
+1) Next, we will go to the search bar at the top of Docker Desktop and search `michaelatamador`. Click on the Image `michaelatamador/nca-app`, and then click `Run`. 
 
-<img src = "images/readme/docker-run.png" style = "display: block; width: 50;"> 
+<p align = "center">
+<img src = "images/readme/docker-run.png" style = "width: 50;" > 
+</p>
 
 5) After clicking on `Run`, click on `Opional settings`. We need to tell the container to open on port `3838` because this is where the Shiny app will open to. The screenshot below is what it should look like.
 
-<img src = "images/readme/docker-3838.png" style = "display: block; width: 50%;"> 
+<p align = "center">
+<img src = "images/readme/docker-3838.png" style = " width: 50%;" > 
+</p>
 
 6) Now click `Run` and it should automatically open a window named `Logs` and this a terminal window of the R session the is being launched. It should look like the screenshot below: 
 
-<img src = "images/readme/docker-r.png" style = "display: block; margin: 0 auto; width: 100%;"> 
+<p align = "center">
+<img src = "images/readme/docker-r.png" style = " margin: 0 auto; width: 100%;" >
+</p> 
 
 7) Now it should be good to run! All you have to do is enter url below into your browser:
 ```
@@ -46,13 +56,17 @@ localhost:3838
 ```
 8) If you see this page when you type in `localhost:3838` then the app is working correctly!
 
-<img src = "images/readme/home.png" style = "display: block; margin: 0 auto; width: 100%;"> 
+<p align = "center">
+<img src = "images/readme/home.png" style = " margin: 0 auto; width: 100%;" > 
+</p>
 
 #### Trouble Shooting with Docker Image
 
 Let's say your on the Ginkgo app and it crashes! It is a simple fix. Go to Docker Desktop and simply click `Restart` button. This will rerun the code to relaunch the Ginkgo app. The screenshot below shows where the `Restart` button is. Once the application is reset, feel free to type in `localhost:3838` back into your browser.
 
-<img src = "images/readme/restart.png" style = "display: block; margin: 0 auto; width: 100%;"> 
+<p align = "center">
+<img src = "images/readme/restart.png" style = " margin: 0 auto; width: 100%;" >
+</p> 
 
 ### 3) Using AWS EC2 Instance
 
