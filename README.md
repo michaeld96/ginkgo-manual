@@ -20,19 +20,18 @@ This Docker Image holds all the dependencies for the Ginkgo app. This resolves t
 
 
 2) Once Docker is installed on your system you now have access to Docker's command line interface (CLI). We first need to sign into Docker through Docker Desktop.
-3) 
+
  <p align = "center">
-<img src = "images/readme/docker-desktop.
-png" style = " width: 50%;" >
+<img src = "images/readme/docker_desktop.png" style = " width: 50%;" >
 </p>
 
-1) Now we will sign into Docker. This will launch in your web browser, and after you sign in it will sign you in your Docker Desktop. *Note:* If you do not have a Docker account you must create an account to be able to `pull` the Docker Image. 
+3) Now we will sign into Docker. This will launch in your web browser, and after you sign in it will sign you in your Docker Desktop. *Note:* If you do not have a Docker account you must create an account to be able to `pull` the Docker Image. 
 
 <p align = "center">
 <img src = "images/readme/docker-sign-in.png" style = "margin: 0 auto; width: 80%;" >
 </p>
 
-1) Next, we will go to the search bar at the top of Docker Desktop and search `michaelatamador`. Click on the Image `michaelatamador/nca-app`, and then click `Run`. 
+4) Next, we will go to the search bar at the top of Docker Desktop and search `michaelatamador`. Click on the Image `michaelatamador/nca-app`, and then click `Run`. 
 
 <p align = "center">
 <img src = "images/readme/docker-run.png" style = "width: 50;" > 
